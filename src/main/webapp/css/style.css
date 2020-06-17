@@ -1,0 +1,38 @@
+#navegador ul{
+   list-style-type: none;
+   text-align: left;
+}
+
+#navegador li{
+   display: inline;
+   text-align: left;
+   margin: 0 5px 0 0;
+}
+
+#navegador li a {
+   padding: 2px 7px 2px 7px;
+   color: #666;
+   background-color: #eeeeee;
+   border: 1px solid #ccc;
+   text-decoration: none;
+}
+
+#navegador li a:hover{
+   background-color: #333333;
+   color: #ffffff;
+}
+
+#required {
+	color: #FF0000;
+}
+
+.custom_button {
+    font-size:10px;
+    font-family:Verdana,Helvetica;
+    font-weight:bold;
+    color:white;
+    background:#638cb5;
+    border:0px;
+    width:auto;
+    height:auto; 
+}

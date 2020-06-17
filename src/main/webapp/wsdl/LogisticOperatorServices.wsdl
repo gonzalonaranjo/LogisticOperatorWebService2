@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services" xmlns:intf="http://services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="insertNewProduct">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertNewProductResponse">
+    <complexType>
+     <sequence>
+      <element name="insertNewProductReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertNewOrder">
+    <complexType>
+     <sequence>
+      <element name="userName" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="idProduct" type="xsd:int"/>
+      <element maxOccurs="unbounded" name="quantity" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertNewOrderResponse">
+    <complexType>
+     <sequence>
+      <element name="insertNewOrderReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="insertNewOrderRequest">
+
+      <wsdl:part element="impl:insertNewOrder" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertNewProductResponse">
+
+      <wsdl:part element="impl:insertNewProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertNewProductRequest">
+
+      <wsdl:part element="impl:insertNewProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertNewOrderResponse">
+
+      <wsdl:part element="impl:insertNewOrderResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="LogisticOperatorServices">
+
+      <wsdl:operation name="insertNewProduct">
+
+         <wsdl:input message="impl:insertNewProductRequest" name="insertNewProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertNewProductResponse" name="insertNewProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertNewOrder">
+
+         <wsdl:input message="impl:insertNewOrderRequest" name="insertNewOrderRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertNewOrderResponse" name="insertNewOrderResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LogisticOperatorServicesSoapBinding" type="impl:LogisticOperatorServices">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="insertNewProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertNewProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertNewProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertNewOrder">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertNewOrderRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertNewOrderResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LogisticOperatorServicesService">
+
+      <wsdl:port binding="impl:LogisticOperatorServicesSoapBinding" name="LogisticOperatorServices">
+
+         <wsdlsoap:address location="http://localhost:9090/LogisticOperatorWebServices/services/LogisticOperatorServices"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
