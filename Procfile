@@ -1,1 +1,1 @@
-web: java -jar target/LogisticOperatorWebService2-1.0.jar
+web: java $JAVA_OPTS -cp LogisticOperatorWebService2\src\main\webapp\jsp\login.jsp
