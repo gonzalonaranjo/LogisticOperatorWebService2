@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp LogisticOperatorWebService2\src\main\webapp\jsp\login.jsp
+web: java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
