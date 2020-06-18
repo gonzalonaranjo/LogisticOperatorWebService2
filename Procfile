@@ -1,1 +1,0 @@
-java -jar target/logisticoperator-1.0.0.jar
